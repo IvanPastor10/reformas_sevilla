@@ -103,11 +103,11 @@
 
   <!-- Imagen de fondo -->
   <img
-    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrP_-TgoF5q1veMI1f-WlBkttsL0COkKG3Gty-Ty8y2O3IWF60R0pufy8t89vXfRO8TB6cUspswGo2zlcBuEatNg-WvNi46mO9ebiBkoO8_p-ErXp4ji85Fnn3ckYZslQupeca6RnySHbAYtaTJzsf6nJhU64h6DLNt4tpbGhPC7COWvHvV2q2TCq6NjFyc0QhVr98BjfIiYP2V2AMiWRKN1QDaF4kM2xyfXDXEW0nN-Kt75THCIbaZ2N14onawjT5kJCBc6qMz1zl"
+    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrP_-TgoF5q1veMI1f-WlBkttsL0COkKG3Gty-Ty8y2O3IWF60R0pufy8t89vXfRO8TB6cUspswGo2zlcBuEatNg-WvNi46mO9ebiBkoO8_p-ErXp4ji85Fnn3ckYZslQupeca6RnySHbAYtaTJzsf6nJhU64h6DLNt4tpbGhPC7COWvHvV2q2TCq6NjFyc0QhVr98BjfIiYP2V2AMiWRKN1QDaF4kM2xyfXDXEW0nN-Kt75THCIbaZ2N14onawjT5kJCBc6qMz1zl=w1920"
     alt=""
     role="presentation"
     fetchpriority="high"
-    class="absolute inset-0 w-full h-full object-cover"
+    class="absolute inset-0 w-full h-full object-cover object-center"
   />
   <div class="hero-overlay absolute inset-0"></div>
 
@@ -440,19 +440,20 @@
         </div>
       </div>
 
-      <!-- Imagen con badge — pb-8 para que el badge -bottom-4 no quede cortado -->
-      <div class="relative fade-up pb-8" style="transition-delay:.2s">
-        <div class="aspect-[4/5] rounded overflow-hidden">
+      <!-- Imagen con badge anclado dentro de ella -->
+      <div class="relative fade-up" style="transition-delay:.2s">
+        <div class="relative aspect-[4/5] rounded overflow-hidden">
           <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOmhTWEkxrNb7nfxnThOUgcIpIxNVqks-lgmVoAjDqg-FYPF7pV8n57yiX5iEof0jympjRdFduTpeJKXP_pA6wHq3XnaVA8DCP55MhaRwnK7Ff-paQY5WAC52ImYT8EgH2fNUTBuu0H-5UNAqdAfQBjr9x8c2orhwFqB9ARjlDCXI4GJ7QPBzaPgsdzCN9GsmRYEiHDvvT5Hx7gtjuxUgCoKN1iM-nhZYiiE9YsxpJ6fR5GxGuk18TNCY2ddDRnsi7BFWtofFf6SV1"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOmhTWEkxrNb7nfxnThOUgcIpIxNVqks-lgmVoAjDqg-FYPF7pV8n57yiX5iEof0jympjRdFduTpeJKXP_pA6wHq3XnaVA8DCP55MhaRwnK7Ff-paQY5WAC52ImYT8EgH2fNUTBuu0H-5UNAqdAfQBjr9x8c2orhwFqB9ARjlDCXI4GJ7QPBzaPgsdzCN9GsmRYEiHDvvT5Hx7gtjuxUgCoKN1iM-nhZYiiE9YsxpJ6fR5GxGuk18TNCY2ddDRnsi7BFWtofFf6SV1=w900"
             alt="Reforma de baño ejecutada por FJRoldán"
             loading="lazy"
             class="w-full h-full object-cover"
           />
-        </div>
-        <div class="absolute -bottom-0 -left-4 md:-left-8 bg-primary text-white rounded p-5 shadow-xl shadow-primary/30">
-          <p class="font-serif text-4xl font-bold leading-none">+20</p>
-          <p class="text-primary-fixed/80 text-xs uppercase tracking-widest mt-1.5">Años en Sevilla</p>
+          <!-- Badge dentro de la imagen, sin colgar fuera del contenedor -->
+          <div class="absolute bottom-6 left-6 bg-primary text-white rounded p-5 shadow-xl shadow-primary/40">
+            <p class="font-serif text-4xl font-bold leading-none">+20</p>
+            <p class="text-primary-fixed/80 text-xs uppercase tracking-widest mt-1.5">Años en Sevilla</p>
+          </div>
         </div>
       </div>
 
