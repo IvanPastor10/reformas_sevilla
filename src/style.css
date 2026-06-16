@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ─────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Work Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fbf9f4;
+    color: #1b1c19;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Libre Caslon Text', Georgia, serif;
+  }
+
+  /* Scrollbar personalizada */
+  ::-webkit-scrollbar        { width: 6px; }
+  ::-webkit-scrollbar-track  { background: #fbf9f4; }
+  ::-webkit-scrollbar-thumb  { background: #964328; border-radius: 4px; }
+
+  /* Focus visible accesible */
+  :focus-visible {
+    outline: 2px solid #964328;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* ── Components ────────────────────────────────────────── */
+@layer components {
+  /* Hero overlay gradient */
+  .hero-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(20, 10, 5, 0.70) 0%,
+      rgba(150, 67, 40, 0.30) 100%
+    );
+  }
+
+  /* Animación de entrada al hacer scroll */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Menú móvil */
+  #mobile-menu {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+  }
+  #mobile-menu.open {
+    max-height: 420px;
+    opacity: 1;
+  }
+
+  /* FAQ accordion */
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  .faq-answer.open {
+    max-height: 220px;
+  }
+  .faq-icon {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+  .faq-icon.open {
+    transform: rotate(45deg);
+  }
+
+  /* Botón primario reutilizable */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-primary text-white font-sans font-semibold
+           text-sm uppercase tracking-widest
+           px-8 py-4 rounded
+           hover:bg-primary-container
+           active:scale-95
+           transition-all duration-200
+           shadow-lg shadow-primary/20;
+  }
+
+  /* Botón outline claro (sobre fondos oscuros) */
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2
+           border-2 border-white/60 text-white font-sans font-semibold
+           text-sm uppercase tracking-widest
+           px-8 py-4 rounded
+           hover:bg-white/10
+           active:scale-95
+           transition-all duration-200;
+  }
+}
+
+/* ── Utilities ─────────────────────────────────────────── */
+@layer utilities {
+  /* Oculta scrollbar en carrusel mobile */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* Material Symbols base */
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .icon-filled {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
